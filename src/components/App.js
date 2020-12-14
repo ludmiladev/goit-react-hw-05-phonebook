@@ -104,15 +104,15 @@ class App extends Component {
       
         <ContactForm onAddItem={this.addItem} />
         <h2>Contacts</h2>
-        {contacts.length > 1 && (
+        
           <CSSTransition
-            in={isFilter}
+            in={contacts.length >1}
             timeout={250}
             unmountOnExit
             classNames={pop}
           >
         <Filter onSetFilter={this.setFilter} value={this.state.filter} />
-        </CSSTransition> )}
+        </CSSTransition>
         <ContactList items={filtratedContacts} onDelete={this.deleteItem} />
       </div>
     );
